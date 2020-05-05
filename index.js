@@ -1,23 +1,24 @@
 addEventListeners();
+var whiteSkullSvg = document.querySelector(".white-skull-svg");
+var blackSkullSvg = document.querySelector(".black-skull-svg");
+var transitionSvg = document.querySelector(".transition-svg");
+var blueTextSvg = document.querySelector(".blue-text-svg");
+var body = document.querySelector("body");
+var timeout;
 
 function addEventListeners() {
   $(".white-skull-svg g").mouseover(function () {
-    if ($(".white-skull-svg").is(":visible")) {
-      $(".white-skull-svg").hide();
-      $(".black-skull-svg").hide();
-      $(".transition-svg").show();
-    //   playAudio();
-      setTimeout(() => {
-        $(".transition-svg").hide();
-        $(".black-skull-svg").show();
-        $(".blue-text-svg").show();
-        $("body").css("background", "black");
-      }, 200);
+    if (whiteSkullSvg.style.display !== "none") {
+      whiteSkullSvg.style.display = "none";
+      blackSkullSvg.style.display = "none";
+      transitionSvg.style.display = "block";
+      timeout = setTimeout(() => {
+        transitionSvg.style.display = "none";
+        blackSkullSvg.style.display = "block";
+        blueTextSvg.style.display = "block";
+        body.style.background = "black";
+      }, 10);
     }
-  });
-
-  $(".transition-skull-svg g").mouseleave(function () {
-    resetState();
   });
 
   $(".black-skull-svg g").mouseleave(function () {
@@ -26,14 +27,15 @@ function addEventListeners() {
 }
 
 function resetState() {
-  $("body").css("background", "white");
-  $(".white-skull-svg").show();
-  $(".black-skull-svg").hide();
-  $(".transition-svg").hide();
-  $('.blue-text-svg').hide();
+  clearTimeout(timeout);
+  body.style.background = "white";
+  whiteSkullSvg.style.display = "block";
+  blackSkullSvg.style.display = "none";
+  transitionSvg.style.display = "none";
+  blueTextSvg.style.display = "none";
 }
 
 function playAudio() {
-    document.getElementById('audio1').play();
-    document.getElementById('audio1').muted = false;
+  document.getElementById("audio1").play();
+  document.getElementById("audio1").muted = false;
 }
