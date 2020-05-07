@@ -14,7 +14,7 @@ svg {
    position: relative;
 }
 
-.black-skull-svg, .transition-svg, .blue-text-svg{
+.black-skull-svg, .transition-svg, .blue-text-svg, .transition2-svg{
    display: none;
 }
 
@@ -30,4 +30,9 @@ svg {
 
 .blue-text-svg {
    width: 100%;
+}
+
+img {
+   width: 50%;
+   margin: 0 auto;
 }
