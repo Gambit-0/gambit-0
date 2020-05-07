@@ -32,6 +32,7 @@ function addEventListeners() {
           transitionSvg.style.display = "none";
           blackSkullSvg.style.display = "block";       
           transition2Svg.style.display = 'none';
+          blueTextSvg.style.display = 'block';
         }, 1));
       }, 1))
     }
@@ -70,6 +71,7 @@ function resetState() {
   blackSkullSvg.style.display = "none";
   transitionSvg.style.display = "none";
   transition2Svg.style.display = 'none';
+  blueTextSvg.style.display = 'none';
 }
 
 function playAudio() {
