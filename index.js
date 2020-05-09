@@ -4,6 +4,8 @@ var blackSkullSvg = document.querySelector(".black-skull-svg");
 var transitionSvg = document.querySelector(".transition-svg");
 var transition2Svg = document.querySelector(".transition2-svg");
 var blueTextSvg = document.querySelector(".blue-text-svg");
+var transitionSocialsWrapper = document.querySelector(".transition-socials-wrapper");
+var finalSocialsWrapper = document.querySelector(".final-socials-wrapper");
 var body = document.querySelector("body");
 var timeouts = [];
 var interval;
@@ -16,15 +18,14 @@ var audio3 = new Audio('audio/audio 3.mp4');
 var audios = [audio1, audio2, audio3];
 
 function addEventListeners() {
-  $(".white-skull-svg g").mouseenter(function () {
+  $(".white-skull-svg g").click(function () {
     if (whiteSkullSvg.style.display !== "none") { 
-      if(playedAudio) {
-        playAudio();
-      }   
+      stopAllAudio();
+      playAudio();
       whiteSkullSvg.style.display = "none";
       blackSkullSvg.style.display = "none";
-      transitionSvg.style.display = "block";    
-      body.style.background = "black"; 
+      transitionSvg.style.display = "block";  
+      transitionSocialsWrapper.style.display = "block";  
       timeouts.push(setTimeout(() => {             
         transitionSvg.style.display = 'none';
         transition2Svg.style.display = 'block';
@@ -33,35 +34,26 @@ function addEventListeners() {
           blackSkullSvg.style.display = "block";       
           transition2Svg.style.display = 'none';
           blueTextSvg.style.display = 'block';
+          body.style.background = "black"; 
+          transitionSocialsWrapper.style.display = 'none';
+          finalSocialsWrapper.style.display = 'block';
         }, 1));
       }, 1))
     }
   });
 
-  $('.black-skull-svg g').mouseleave(function(e) {
-    resetState();
-    audios.forEach(audio => {
-      audio.pause();
-      audio.currentTime = 0;
-    })
-  });
-
   $('.black-skull-svg g').click(function(e) {
-    let allPaused = true;
-    audios.forEach(audio => {
-      if (!audio.paused) {
-        allPaused = false;
-        return;
-      }
-    })
-    if(allPaused) {
-      playAudio();
-    }
+    stopAllAudio();
+    playAudio();
+    resetState();
   });
+}
 
-  // $('.black-skull-svg g').mouseleave(function() {
-  //   resetState();
-  // }); 
+function stopAllAudio() {
+  audios.forEach(audio => {
+    audio.pause();
+    audio.currentTime = 0;
+  })
 }
 
 function resetState() {
@@ -72,13 +64,14 @@ function resetState() {
   transitionSvg.style.display = "none";
   transition2Svg.style.display = 'none';
   blueTextSvg.style.display = 'none';
+  transitionSocialsWrapper.style.display = 'none';
+  finalSocialsWrapper.style.display = 'none';
 }
 
 function playAudio() {
   const index = Math.floor(Math.random() * 3);
   console.log('playing' + index);
   audios[index].play();
-  playedAudio = true;
 }
 
 function clearTimeouts() {

@@ -6,7 +6,55 @@ html, body {
 
 svg {
    margin: 0 auto;
+   height: 100%;
+   display: block;
+   margin: 0 auto;
+}
+
+.transition-socials, .final-socials {
+   display:flex;
+   height: 100%;
+   justify-content: flex-start;
+}
+
+.transition-socials-wrapper, .final-socials-wrapper {
+   height: 100%;
+   display: none;
+}
+
+.socials {
+   position: absolute;
+   bottom: 10%;
+   left: 2%;
+   height: 50px;
+}
+
+.socials img {
    max-height: 100%;
+   width: auto;
+   margin: 4px;
+}
+
+.transition-socials-caption a {
+   background-color: black;
+   color: white;
+   text-decoration: none;
+   margin-top: 4px;
+   display: inline-block;
+   font-size: 20px;
+}
+
+.final-socials-caption a {
+   color: #0000FF;
+   text-decoration: none;
+   margin-top: 4px;
+   display: inline-block;
+   font-size: 20px;
+}
+
+.transition-socials-caption, .final-socials-caption {
+   margin-left: 8%;
+   margin-bottom: 10%;
 }
 
 #svg-container {
@@ -32,7 +80,7 @@ svg {
    width: 100%;
 }
 
-img {
+/* img {
    width: 50%;
    margin: 0 auto;
-}
+} */
