@@ -25,7 +25,7 @@ function addEventListeners() {
       whiteSkullSvg.style.display = "none";
       blackSkullSvg.style.display = "none";
       transitionSvg.style.display = "block";  
-      transitionSocialsWrapper.style.display = "block";  
+      transitionSocialsWrapper.style.display = "flex";  
       timeouts.push(setTimeout(() => {             
         transitionSvg.style.display = 'none';
         transition2Svg.style.display = 'block';
@@ -36,7 +36,7 @@ function addEventListeners() {
           blueTextSvg.style.display = 'block';
           body.style.background = "black"; 
           transitionSocialsWrapper.style.display = 'none';
-          finalSocialsWrapper.style.display = 'block';
+          finalSocialsWrapper.style.display = 'flex';
         }, 1));
       }, 1))
     }
@@ -64,8 +64,8 @@ function resetState() {
   transitionSvg.style.display = "none";
   transition2Svg.style.display = 'none';
   blueTextSvg.style.display = 'none';
-  transitionSocialsWrapper.style.display = 'none';
-  finalSocialsWrapper.style.display = 'none';
+  transitionSocialsWrapper.style.display = 'flex';
+  finalSocialsWrapper.style.display = 'flex';
 }
 
 function playAudio() {

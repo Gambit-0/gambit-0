@@ -17,11 +17,6 @@ svg {
    justify-content: flex-start;
 }
 
-.transition-socials-wrapper, .final-socials-wrapper {
-   height: 100%;
-   display: none;
-}
-
 .socials {
    position: absolute;
    bottom: 10%;
@@ -76,11 +71,28 @@ svg {
    top: 0; bottom: 8%; right: 7%;
 }
 
-.blue-text-svg {
-   width: 100%;
+.transition-socials-wrapper, .final-socials-wrapper {
+   height: 100%;
+   display: none;
+   flex-direction: column;
 }
 
 /* img {
    width: 50%;
    margin: 0 auto;
 } */
+
+
+@media screen and (max-width: 600px) {
+   /* .socials {
+      position: absolute;
+      left: 0;
+      height: 50px;
+   } */
+   svg {
+      height: 80%;
+   }
+   .transition-socials-wrapper, .final-socials-wrapper {
+      flex-direction: row;
+   }
+ }
