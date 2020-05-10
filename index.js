@@ -11,6 +11,7 @@ var timeouts = [];
 var interval;
 var playingAudio = false;
 var playedAudio = false;
+console.log(1);
 
 var audio1 = new Audio('audio/audio 1.mp4');
 var audio2 = new Audio('audio/audio 2.mp4');
