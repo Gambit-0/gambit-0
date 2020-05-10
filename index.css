@@ -95,14 +95,12 @@ svg {
 
 
 @media screen and (max-width: 600px) {
-   /* .socials {
-      position: absolute;
-      left: 0;
-      height: 50px;
-   } */
-   svg {
-      height: 80%;
+   .socials {
+      bottom: 0;
    }
+   /* svg {
+      height: 80%;
+   } */
    .transition-socials-wrapper, .final-socials-wrapper {
       flex-direction: row;
    }

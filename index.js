@@ -9,6 +9,7 @@ var transitionSocialsWrapper = document.querySelector(".transition-socials-wrapp
 var finalSocialsWrapper = document.querySelector(".final-socials-wrapper");
 var body = document.querySelector("body");
 var timeouts = [];
+var svgs = document.querySelector('svg');
 var interval;
 var playingAudio = false;
 var playedAudio = false;
@@ -36,8 +37,12 @@ function addEventListeners() {
           transition2Svg.style.display = 'none';
           if ($(window).width() > 930) {
             blueTextSvg.style.display = 'block';
+            $('svg').css('height', '100%');
           } else {
             blueTextSvgSmall.style.display = 'block'
+            if ($(window).width() < 600) {
+              $('svg').css('height', '90%');
+            }
           }
           body.style.background = "black"; 
           transitionSocialsWrapper.style.display = 'none';
@@ -54,12 +59,16 @@ function addEventListeners() {
   });
 
   $(window).resize(function(){
-    if ($(window).width() < 930 && blueTextSvg.style.display == 'block') {
+    if ($(window).width() < 930 && (blueTextSvg.style.display == 'block' || blueTextSvgSmall.style.display == 'block')) {
       blueTextSvg.style.display = 'none';
       blueTextSvgSmall.style.display = 'block'
+      if ($(window).width() < 600) {
+        $('svg').css('height', '90%');
+      }
     } else if($(window).width() > 930 && blueTextSvgSmall.style.display === 'block') {
       blueTextSvg.style.display = 'block';
       blueTextSvgSmall.style.display = 'none'
+      $('svg').css('height', '100%');
     }
   })
 }
