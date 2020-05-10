@@ -64,8 +64,8 @@ function resetState() {
   transitionSvg.style.display = "none";
   transition2Svg.style.display = 'none';
   blueTextSvg.style.display = 'none';
-  transitionSocialsWrapper.style.display = 'flex';
-  finalSocialsWrapper.style.display = 'flex';
+  transitionSocialsWrapper.style.display = 'none';
+  finalSocialsWrapper.style.display = 'none';
 }
 
 function playAudio() {
