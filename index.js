@@ -4,6 +4,7 @@ var blackSkullSvg = document.querySelector(".black-skull-svg");
 var transitionSvg = document.querySelector(".transition-svg");
 var transition2Svg = document.querySelector(".transition2-svg");
 var blueTextSvg = document.querySelector(".blue-text-svg");
+var blueTextSvgSmall = document.querySelector(".blue-text-svg-small");
 var transitionSocialsWrapper = document.querySelector(".transition-socials-wrapper");
 var finalSocialsWrapper = document.querySelector(".final-socials-wrapper");
 var body = document.querySelector("body");
@@ -11,7 +12,6 @@ var timeouts = [];
 var interval;
 var playingAudio = false;
 var playedAudio = false;
-console.log(1);
 
 var audio1 = new Audio('audio/audio 1.mp4');
 var audio2 = new Audio('audio/audio 2.mp4');
@@ -34,7 +34,11 @@ function addEventListeners() {
           transitionSvg.style.display = "none";
           blackSkullSvg.style.display = "block";       
           transition2Svg.style.display = 'none';
-          blueTextSvg.style.display = 'block';
+          if ($(window).width() > 930) {
+            blueTextSvg.style.display = 'block';
+          } else {
+            blueTextSvgSmall.style.display = 'block'
+          }
           body.style.background = "black"; 
           transitionSocialsWrapper.style.display = 'none';
           finalSocialsWrapper.style.display = 'flex';
@@ -48,6 +52,16 @@ function addEventListeners() {
     playAudio();
     resetState();
   });
+
+  $(window).resize(function(){
+    if ($(window).width() < 930 && blueTextSvg.style.display == 'block') {
+      blueTextSvg.style.display = 'none';
+      blueTextSvgSmall.style.display = 'block'
+    } else if($(window).width() > 930 && blueTextSvgSmall.style.display === 'block') {
+      blueTextSvg.style.display = 'block';
+      blueTextSvgSmall.style.display = 'none'
+    }
+  })
 }
 
 function stopAllAudio() {
@@ -65,6 +79,7 @@ function resetState() {
   transitionSvg.style.display = "none";
   transition2Svg.style.display = 'none';
   blueTextSvg.style.display = 'none';
+  blueTextSvgSmall.style.display = 'none';
   transitionSocialsWrapper.style.display = 'none';
   finalSocialsWrapper.style.display = 'none';
 }

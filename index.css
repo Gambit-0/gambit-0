@@ -21,6 +21,7 @@ svg {
    position: absolute;
    bottom: 10%;
    left: 2%;
+   font-family: Arial, Helvetica, sans-serif;
    height: 50px;
 }
 
@@ -57,7 +58,7 @@ svg {
    position: relative;
 }
 
-.black-skull-svg, .transition-svg, .blue-text-svg, .transition2-svg{
+.black-skull-svg, .transition-svg, .blue-text-svg, .transition2-svg, .blue-text-svg-small {
    display: none;
 }
 
@@ -69,6 +70,16 @@ svg {
    margin: auto;
    position: absolute;
    top: 0; bottom: 8%; right: 7%;
+}
+
+.blue-text-svg-small {
+   pointer-events : none;
+   width: 80%;
+   height: 70%;
+   margin: 0 auto;
+   overflow: auto;
+   position: absolute;
+   top: 0; left: 5%;
 }
 
 .transition-socials-wrapper, .final-socials-wrapper {
@@ -95,4 +106,10 @@ svg {
    .transition-socials-wrapper, .final-socials-wrapper {
       flex-direction: row;
    }
+   /* .transition-socials-caption, .final-socials-caption {
+      order: 2;
+   }
+   .transition-socials, .final-socials {
+      order: 1;
+   } */
  }
