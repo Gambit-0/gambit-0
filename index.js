@@ -33,7 +33,6 @@ function addEventListeners() {
       whiteSkullSvg.style.display = "none";
       blackSkullSvg.style.display = "none";
       transitionSvg.style.display = "block";  
-      transitionSocialsWrapper.style.display = "flex";  
         transitionSvg.style.display = 'none';
         transition2Svg.style.display = 'block';
         timeouts.push(setTimeout(() => {
@@ -50,7 +49,6 @@ function addEventListeners() {
             }
           }
           body.style.background = "black"; 
-          transitionSocialsWrapper.style.display = 'none';
           finalSocialsWrapper.style.display = 'flex';
         }, 0.1));
     }
@@ -93,7 +91,6 @@ function resetState() {
   transition2Svg.style.display = 'none';
   blueTextSvg.style.display = 'none';
   blueTextSvgSmall.style.display = 'none';
-  transitionSocialsWrapper.style.display = 'none';
   finalSocialsWrapper.style.display = 'none';
 }
 
