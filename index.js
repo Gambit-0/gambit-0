@@ -17,18 +17,23 @@ var playedAudio = false;
 var audio1 = new Audio('audio/audio 1.mp4');
 var audio2 = new Audio('audio/audio 2.mp4');
 var audio3 = new Audio('audio/audio 3.mp4');
-var audios = [audio1, audio2, audio3];
+var whiteAudio = new Audio('audio/sound on white.mp3')
+var audios = [audio1, audio2, audio3, whiteAudio];
+
+function svgLoaded() {
+  whiteSkullSvg.style.display = 'block';
+}
 
 function addEventListeners() {
   $(".white-skull-svg g").click(function () {
     if (whiteSkullSvg.style.display !== "none") { 
+      const t1 = performance.now();
       stopAllAudio();
-      playAudio();
+      playBlackSvgAudio();
       whiteSkullSvg.style.display = "none";
       blackSkullSvg.style.display = "none";
       transitionSvg.style.display = "block";  
       transitionSocialsWrapper.style.display = "flex";  
-      timeouts.push(setTimeout(() => {             
         transitionSvg.style.display = 'none';
         transition2Svg.style.display = 'block';
         timeouts.push(setTimeout(() => {
@@ -47,14 +52,13 @@ function addEventListeners() {
           body.style.background = "black"; 
           transitionSocialsWrapper.style.display = 'none';
           finalSocialsWrapper.style.display = 'flex';
-        }, 1));
-      }, 1))
+        }, 0.1));
     }
   });
 
   $('.black-skull-svg g').click(function(e) {
     stopAllAudio();
-    playAudio();
+    playWhiteSvgAudio();
     resetState();
   });
 
@@ -93,10 +97,14 @@ function resetState() {
   finalSocialsWrapper.style.display = 'none';
 }
 
-function playAudio() {
+function playBlackSvgAudio() {
   const index = Math.floor(Math.random() * 3);
   console.log('playing' + index);
   audios[index].play();
+}
+
+function playWhiteSvgAudio() {
+  whiteAudio.play();
 }
 
 function clearTimeouts() {

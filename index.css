@@ -25,10 +25,21 @@ svg {
    height: 50px;
 }
 
-.socials img {
-   max-height: 100%;
+.final-socials-wrapper img{
+   max-height: 70%;
    width: auto;
    margin: 4px;
+}
+
+.transition-socials-wrapper img {
+   max-height: 47%;
+   width: auto;
+   margin: 6px;
+}
+
+.transition-socials {
+   margin-left: 5%;
+   margin-top: 3%;
 }
 
 .transition-socials-caption a {
@@ -58,7 +69,7 @@ svg {
    position: relative;
 }
 
-.black-skull-svg, .transition-svg, .blue-text-svg, .transition2-svg, .blue-text-svg-small {
+.black-skull-svg, .transition-svg, .blue-text-svg, .transition2-svg, .blue-text-svg-small, .white-skull-svg {
    display: none;
 }
 
