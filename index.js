@@ -34,6 +34,10 @@ function addEventListeners() {
       blackSkullSvg.style.display = "none";
       transitionSvg.style.display = "block";  
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      transitionSocialsWrapper.style.display = "flex";  
+>>>>>>> parent of 566103a... update
       timeouts.push(setTimeout(() => {
 =======
       transitionSocialsWrapper.style.display = "flex";  
@@ -54,6 +58,7 @@ function addEventListeners() {
             }
           }
           body.style.background = "black"; 
+          transitionSocialsWrapper.style.display = 'none';
           finalSocialsWrapper.style.display = 'flex';
         }, 0.1));
     }
@@ -96,6 +101,7 @@ function resetState() {
   transition2Svg.style.display = 'none';
   blueTextSvg.style.display = 'none';
   blueTextSvgSmall.style.display = 'none';
+  transitionSocialsWrapper.style.display = 'none';
   finalSocialsWrapper.style.display = 'none';
 }
 

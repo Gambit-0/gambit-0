@@ -5,10 +5,21 @@ html, body {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .black-skull-svg, .transition-svg, .white-skull-svg, .transition2-svg {
 =======
 svg, .transition2-svg {
 >>>>>>> parent of f44f0f5... from svg to img
+=======
+svg, .transition2-svg {
+   margin: 0 auto;
+   height: 100%;
+   display: block;
+   margin: 0 auto;
+}
+
+img {
+>>>>>>> parent of 566103a... update
    margin: 0 auto;
    height: 100%;
    display: block;
@@ -30,14 +41,29 @@ svg, .transition2-svg {
 }
 
 .final-socials-wrapper img{
-   height: 30px;
+   max-height: 70%;
    width: auto;
    margin: 4px;
+}
+
+.transition-socials-wrapper img {
+   max-height: 47%;
+   width: auto;
+   margin: 6px;
 }
 
 .transition-socials {
    margin-left: 5%;
    margin-top: 3%;
+}
+
+.transition-socials-caption a {
+   background-color: black;
+   color: white;
+   text-decoration: none;
+   margin-top: 4px;
+   display: inline-block;
+   font-size: 20px;
 }
 
 .final-socials-caption a {
@@ -48,7 +74,8 @@ svg, .transition2-svg {
    font-size: 20px;
 }
 
-.final-socials-caption {
+.transition-socials-caption, .final-socials-caption {
+   margin-left: 8%;
    margin-bottom: 10%;
 }
 
