@@ -4,14 +4,7 @@ html, body {
    padding: 0;
 }
 
-svg, .transition2-svg {
-   margin: 0 auto;
-   height: 100%;
-   display: block;
-   margin: 0 auto;
-}
-
-img {
+.black-skull-svg, .transition-svg, .white-skull-svg, .transition2-svg {
    margin: 0 auto;
    height: 100%;
    display: block;
@@ -33,29 +26,14 @@ img {
 }
 
 .final-socials-wrapper img{
-   max-height: 70%;
+   height: 30px;
    width: auto;
    margin: 4px;
-}
-
-.transition-socials-wrapper img {
-   max-height: 47%;
-   width: auto;
-   margin: 6px;
 }
 
 .transition-socials {
    margin-left: 5%;
    margin-top: 3%;
-}
-
-.transition-socials-caption a {
-   background-color: black;
-   color: white;
-   text-decoration: none;
-   margin-top: 4px;
-   display: inline-block;
-   font-size: 20px;
 }
 
 .final-socials-caption a {
@@ -66,8 +44,7 @@ img {
    font-size: 20px;
 }
 
-.transition-socials-caption, .final-socials-caption {
-   margin-left: 8%;
+.final-socials-caption {
    margin-bottom: 10%;
 }
 
