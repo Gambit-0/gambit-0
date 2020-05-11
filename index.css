@@ -11,7 +11,7 @@ svg, .transition2-svg {
    margin: 0 auto;
 }
 
-.transition-socials, .final-socials {
+.final-socials {
    display:flex;
    height: 100%;
    justify-content: flex-start;
@@ -26,20 +26,9 @@ svg, .transition2-svg {
 }
 
 .final-socials-wrapper img{
-   max-height: 70%;
+   height: 30px;
    width: auto;
    margin: 4px;
-}
-
-.transition-socials-wrapper img {
-   max-height: 47%;
-   width: auto;
-   margin: 6px;
-}
-
-.transition-socials {
-   margin-left: 5%;
-   margin-top: 3%;
 }
 
 .transition-socials-caption a {
@@ -59,7 +48,7 @@ svg, .transition2-svg {
    font-size: 20px;
 }
 
-.transition-socials-caption, .final-socials-caption {
+.final-socials-caption {
    margin-left: 8%;
    margin-bottom: 10%;
 }
@@ -93,7 +82,7 @@ svg, .transition2-svg {
    top: 0; left: 5%;
 }
 
-.transition-socials-wrapper, .final-socials-wrapper {
+.final-socials-wrapper {
    height: 100%;
    display: none;
    flex-direction: column;
