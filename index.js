@@ -32,7 +32,8 @@ function addEventListeners() {
       playBlackSvgAudio();
       whiteSkullSvg.style.display = "none";
       blackSkullSvg.style.display = "none";
-      transitionSvg.style.display = "block";  
+      transitionSvg.style.display = "block"; 
+      timeouts.push(setTimeout(() => {
         transitionSvg.style.display = 'none';
         transition2Svg.style.display = 'block';
         timeouts.push(setTimeout(() => {
@@ -50,7 +51,8 @@ function addEventListeners() {
           }
           body.style.background = "black"; 
           finalSocialsWrapper.style.display = 'flex';
-        }, 0.1));
+        }, 1));
+      }, 1)) 
     }
   });
 
