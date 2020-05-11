@@ -4,7 +4,7 @@ html, body {
    padding: 0;
 }
 
-svg {
+svg, .transition2-svg {
    margin: 0 auto;
    height: 100%;
    display: block;
