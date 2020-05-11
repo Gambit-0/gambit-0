@@ -25,15 +25,16 @@ function svgLoaded() {
 }
 
 function addEventListeners() {
-  $(".white-skull-svg g").click(function () {
+  $(".white-skull-svg").click(function () {
     if (whiteSkullSvg.style.display !== "none") { 
       const t1 = performance.now();
       stopAllAudio();
-      playBlackSvgAudio();
+      playWhiteSvgAudio();
       whiteSkullSvg.style.display = "none";
       blackSkullSvg.style.display = "none";
       transitionSvg.style.display = "block";  
       transitionSocialsWrapper.style.display = "flex";  
+      timeouts.push(setTimeout(() => {
         transitionSvg.style.display = 'none';
         transition2Svg.style.display = 'block';
         timeouts.push(setTimeout(() => {
@@ -41,24 +42,27 @@ function addEventListeners() {
           blackSkullSvg.style.display = "block";       
           transition2Svg.style.display = 'none';
           if ($(window).width() > 930) {
-            blueTextSvg.style.display = 'block';
             $('svg').css('height', '100%');
+            blueTextSvg.style.display = 'block';
+            blueTextSvgSmall.style.display = 'none';
           } else {
-            blueTextSvgSmall.style.display = 'block'
             if ($(window).width() < 600) {
               $('svg').css('height', '90%');
+              blueTextSvgSmall.style.display = 'block';
+              blueTextSvg.style.display = 'none';
             }
           }
           body.style.background = "black"; 
           transitionSocialsWrapper.style.display = 'none';
           finalSocialsWrapper.style.display = 'flex';
-        }, 0.1));
+        }, 50));
+      }, 50))     
     }
   });
 
-  $('.black-skull-svg g').click(function(e) {
+  $('.black-skull-svg').click(function(e) {
     stopAllAudio();
-    playWhiteSvgAudio();
+    playBlackSvgAudio();
     resetState();
   });
 

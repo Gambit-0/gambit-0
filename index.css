@@ -11,6 +11,13 @@ svg, .transition2-svg {
    margin: 0 auto;
 }
 
+img {
+   margin: 0 auto;
+   height: 100%;
+   display: block;
+   margin: 0 auto;
+}
+
 .transition-socials, .final-socials {
    display:flex;
    height: 100%;
@@ -69,7 +76,7 @@ svg, .transition2-svg {
    position: relative;
 }
 
-.black-skull-svg, .transition-svg, .blue-text-svg, .transition2-svg, .blue-text-svg-small, .white-skull-svg {
+.black-skull-svg, .transition-svg, .blue-text-svg, .transition2-svg, .blue-text-svg-small {
    display: none;
 }
 
