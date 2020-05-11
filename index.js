@@ -33,15 +33,7 @@ function addEventListeners() {
       whiteSkullSvg.style.display = "none";
       blackSkullSvg.style.display = "none";
       transitionSvg.style.display = "block";  
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
       transitionSocialsWrapper.style.display = "flex";  
->>>>>>> parent of 566103a... update
-      timeouts.push(setTimeout(() => {
-=======
-      transitionSocialsWrapper.style.display = "flex";  
->>>>>>> parent of f44f0f5... from svg to img
         transitionSvg.style.display = 'none';
         transition2Svg.style.display = 'block';
         timeouts.push(setTimeout(() => {
