@@ -4,7 +4,11 @@ html, body {
    padding: 0;
 }
 
+<<<<<<< HEAD
 .black-skull-svg, .transition-svg, .white-skull-svg, .transition2-svg {
+=======
+svg, .transition2-svg {
+>>>>>>> parent of f44f0f5... from svg to img
    margin: 0 auto;
    height: 100%;
    display: block;
@@ -53,7 +57,7 @@ html, body {
    position: relative;
 }
 
-.black-skull-svg, .transition-svg, .blue-text-svg, .transition2-svg, .blue-text-svg-small {
+.black-skull-svg, .transition-svg, .blue-text-svg, .transition2-svg, .blue-text-svg-small, .white-skull-svg {
    display: none;
 }
 

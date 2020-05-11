@@ -25,15 +25,19 @@ function svgLoaded() {
 }
 
 function addEventListeners() {
-  $(".white-skull-svg").click(function () {
+  $(".white-skull-svg g").click(function () {
     if (whiteSkullSvg.style.display !== "none") { 
       const t1 = performance.now();
       stopAllAudio();
-      playWhiteSvgAudio();
+      playBlackSvgAudio();
       whiteSkullSvg.style.display = "none";
       blackSkullSvg.style.display = "none";
       transitionSvg.style.display = "block";  
+<<<<<<< HEAD
       timeouts.push(setTimeout(() => {
+=======
+      transitionSocialsWrapper.style.display = "flex";  
+>>>>>>> parent of f44f0f5... from svg to img
         transitionSvg.style.display = 'none';
         transition2Svg.style.display = 'block';
         timeouts.push(setTimeout(() => {
@@ -41,26 +45,23 @@ function addEventListeners() {
           blackSkullSvg.style.display = "block";       
           transition2Svg.style.display = 'none';
           if ($(window).width() > 930) {
-            $('svg').css('height', '100%');
             blueTextSvg.style.display = 'block';
-            blueTextSvgSmall.style.display = 'none';
+            $('svg').css('height', '100%');
           } else {
+            blueTextSvgSmall.style.display = 'block'
             if ($(window).width() < 600) {
               $('svg').css('height', '90%');
-              blueTextSvgSmall.style.display = 'block';
-              blueTextSvg.style.display = 'none';
             }
           }
           body.style.background = "black"; 
           finalSocialsWrapper.style.display = 'flex';
-        }, 50));
-      }, 50))     
+        }, 0.1));
     }
   });
 
-  $('.black-skull-svg').click(function(e) {
+  $('.black-skull-svg g').click(function(e) {
     stopAllAudio();
-    playBlackSvgAudio();
+    playWhiteSvgAudio();
     resetState();
   });
 
